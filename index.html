@@ -5,8 +5,8 @@
         <title>clownOS</title>
     </head>
     <body style = "background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Qn50dUVmWmpb_nJhtERDo3y2BlU9wdVGVw&s); height:100vh; background-size:cover;">
-        <div style = "transform: translate(-50%, -50%); background-color: white; padding:10px; position:absolute; top:50%; left: 50%;border:solid; width:fit-content; border-radius:15px">
-            <h1> welcome to clownOS</h1>
+        <div id = "window" style = "transform: translate(-50%, -50%); background-color: white; padding:10px; position:absolute; top:50%; left: 50%;border:solid; width:fit-content; border-radius:15px">
+            <h1 id = "welcomeheader"> welcome to clownOS</h1>
             <h2>Introduction</h2>
             <p>Welcome to the clownOS!</p>
             <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Qn50dUVmWmpb_nJhtERDo3y2BlU9wdVGVw&s" alt = "clown" width = "500" height = "500">
@@ -15,12 +15,6 @@
             <p>ClownOS</p>
             <p id = "timeEl">12:33pm 6/25/26</p>
         </div>
-        <script>
-            function updateTime() {
-                var currTime = new Date().toLocaleString();
-                document.getElementById("timeEl").textContent = currTime;
-            }
-            setInterval(updateTime, 1000);
-        </script>
+        <script src = "script.js"></script>
     </body>
 </html>
