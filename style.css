@@ -1,0 +1,19 @@
+#content {
+    border:1px solid black;
+    border-radius: 5px;
+    width:fit-content;
+    padding:6px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+body {
+    background-image: url('./images/wallpaper.jpg');
+    background-size: cover;
+    height:100vh;
+}
+#topBar {
+    display:flex;
+    justify-content: space-between;
+}
