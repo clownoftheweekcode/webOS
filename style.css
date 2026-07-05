@@ -1,12 +1,15 @@
-#content {
+#welcome {
     border:1px solid black;
     border-radius: 5px;
     width:fit-content;
-    padding:6px;
+    /* padding:6px; */
+    padding-top:0px;
     position: absolute;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
+    background-color: aliceblue;
+    margin:0px;
 }
 body {
     background-image: url('./images/wallpaper.jpg');
@@ -16,4 +19,28 @@ body {
 #topBar {
     display:flex;
     justify-content: space-between;
+    background-color:blue;
+    padding: 0px 15px;
+    border-radius:5px;
+}
+#welcomeclose  {
+    background-color: red;
+    width:13px;
+    height:13px;
+    margin-right:5px;
+    border-radius:3px;
+    margin:6px;
+}
+#welcomeclose, #welcomeheader {
+    display:inline-block;
+    vertical-align: middle;
+}
+#welcomehead {
+    margin:0px;
+}
+#winTop {
+    background-color:blue;
+}
+#winCont {
+    padding:6px;
 }
