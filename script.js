@@ -51,3 +51,28 @@ welcomeScreenClose.addEventListener("click", function() {
 welcomeScreenOpen.addEventListener("click", function() {
     openWindow(welcomeScreen);
 });
+// open app //
+var selectedIcon = undefined;
+function selectIcon(el) {
+    el.classList.add("selected");
+    selectedIcon = el;
+}
+function deselectIcon(el) {
+    el.classList.remove("selected");
+    selectedIcon = undefined;
+}
+function handleIconTap(el) {
+    if(el.classList.contains("selected")) {
+        deselectIcon(el);
+        openWindow(window);
+    } else {
+        selectIcon(el);
+    }
+}
+// make app draggable // 
+dragElement(document.querySelector("#app"));
+// make app openable and closable //
+var appScreen = document.querySelector("#app");
+var appScreenClose = document.querySelector("appclose");
+appScreenClose.addEventListener("click", () => 
+    closeWindow(appScreen));

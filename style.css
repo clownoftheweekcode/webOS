@@ -44,3 +44,55 @@ body {
 #winCont {
     padding:6px;
 }
+#appIcon {
+    width: 50px;
+    height:50px;
+    background-color: blue;
+    margin:auto;
+}
+.app {
+    width:75px;
+    text-align:center;
+    margin-top:10px;
+}
+.app p {
+    padding:0px;
+    margin:0px;
+}
+.app:focus {
+    background-color:rgba(233, 226, 255, 0.27);
+}
+#appclose  {
+    background-color: red;
+    width:13px;
+    height:13px;
+    margin-right:5px;
+    border-radius:3px;
+    margin:6px;
+}
+#appclose, #appheader {
+    display:inline-block;
+    vertical-align: middle;
+}
+#apphead {
+    margin:0px;
+}
+#appTop {
+    background-color:blue;
+}
+#appCont {
+    padding:6px;
+}
+#app {
+    border:1px solid black;
+    border-radius: 5px;
+    width:fit-content;
+    /* padding:6px; */
+    padding-top:0px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background-color: aliceblue;
+    margin:0px;
+}
