@@ -84,6 +84,7 @@ body {
     padding:6px;
 }
 #app {
+    display:none;
     border:1px solid black;
     border-radius: 5px;
     width:fit-content;
@@ -95,4 +96,12 @@ body {
     transform: translate(-50%, -50%);
     background-color: aliceblue;
     margin:0px;
+}
+#desktopApps button {
+    background-color:transparent;
+    border:none;
+    width:fit-content;
+}
+#desktopApps button:focus {
+    border:1px dotted black;
 }
