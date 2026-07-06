@@ -43,6 +43,8 @@ function closeWindow(el) {
 }
 function openWindow(el) {
     el.style.display = "block";
+    biggestIndex++;
+    el.style.zIndex = biggestIndex;
 }
 var welcomeScreenClose = document.querySelector("#welcomeclose"), welcomeScreenOpen = document.querySelector("#welcomeopen");
 welcomeScreenClose.addEventListener("click", function() {
@@ -61,7 +63,9 @@ function deselectIcon(el) {
     el.classList.remove("selected");
     selectedIcon = undefined;
 }
-function handleIconTap(el) {
+function handleIconTap(el, window) {
+    biggestIndex++;
+    el.style.zIndex = biggestIndex;
     if(el.classList.contains("selected")) {
         deselectIcon(el);
         openWindow(window);
@@ -73,6 +77,17 @@ function handleIconTap(el) {
 dragElement(document.querySelector("#app"));
 // make app openable and closable //
 var appScreen = document.querySelector("#app");
-var appScreenClose = document.querySelector("appclose");
+var appScreenClose = document.querySelector("#appclose");
+var appOpen = document.querySelector("#appopen");
 appScreenClose.addEventListener("click", () => 
     closeWindow(appScreen));
+
+function addWindowTapHandling(el) {
+    el.addEventListener("mousedown", () =>
+    handleIconTap(el))
+}
+appOpen.addEventListener("click", () => 
+    openWindow(appScreen));
+addWindowTapHandling(welcomeScreen);
+addWindowTapHandling(appScreen);
+var biggestIndex = 1;
