@@ -44,7 +44,7 @@ body {
 #winCont {
     padding:6px;
 }
-#appIcon {
+#appIcon, #timerIcon {
     width: 50px;
     height:50px;
     background-color: blue;
@@ -62,7 +62,7 @@ body {
 .app:focus {
     background-color:rgba(233, 226, 255, 0.27);
 }
-#appclose  {
+#appclose, #timerclose  {
     background-color: red;
     width:13px;
     height:13px;
@@ -70,20 +70,20 @@ body {
     border-radius:3px;
     margin:6px;
 }
-#appclose, #appheader {
+#appclose, #appheader, #timerclose, #timerheader {
     display:inline-block;
     vertical-align: middle;
 }
-#apphead {
+#apphead, #timerhead {
     margin:0px;
 }
-#appTop {
+#appTop, #timerTop {
     background-color:blue;
 }
-#appCont {
+#appCont, #timerCont {
     padding:6px;
 }
-#app {
+#app, #timer {
     display:none;
     border:1px solid black;
     border-radius: 5px;

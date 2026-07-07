@@ -91,3 +91,20 @@ appOpen.addEventListener("click", () =>
 addWindowTapHandling(welcomeScreen);
 addWindowTapHandling(appScreen);
 var biggestIndex = 1;
+function initializeIcon(name) {
+    var icon = document.querySelector('#' + name + 'Icon');
+    var screen = document.querySelector('#' + name);
+    icon.addEventListener("click", () => handleIconTap(icon, screen));
+}
+initializeIcon("timer");
+function initializeWindow(elName) {
+    var screen = document.querySelector("#" + elName);
+    addWindowTapHandling(screen);
+    closeWindow(elName);
+    dragElement(screen);
+    if (elName != "window") {
+        initializeIcon(elName);
+    }
+}
+initializeWindow("welcome");
+initializeWindow("timer");
