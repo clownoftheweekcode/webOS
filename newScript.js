@@ -54,10 +54,13 @@ function elements() {
     var timerHeader = document.querySelector("#timerheader");
 }
 function setFunctions() {
-    welcomeScreenOpen.addEventListener("click", () => 
-        openWindow(welcomeScreen));
-    appScreenOpen.addEventListener("click", () => 
-        openWindow(appScreen));
+    welcomeScreenOpen.addEventListener("click", function() {
+        dragElement(document.getElementById("welcome"));
+    });
+        
+    appScreenOpen.addEventListener("click", function() {
+        document.getElementById("app");
+    });
     timerScreenOpen.addEventListener("click", () => 
         openWindow(timerScreen));
     welcomeClose.addEventListener("click", () => 
