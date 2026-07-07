@@ -39,9 +39,15 @@ function dragElement(el) {
 // opening and closing welcome window //
 var welcomeScreen = document.querySelector("#welcome");
 function closeWindow(el) {
+    el.classList.remove("active");
     el.style.display = "none";
 }
 function openWindow(el) {
+    if (!el.classList.contains("active")) {
+        el.classList.add("active");
+        el.style.left = 300 + "px";
+        el.style.top = 300 + "px";
+    }
     el.style.display = "block";
     biggestIndex++;
     el.style.zIndex = biggestIndex;
