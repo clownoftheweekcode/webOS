@@ -41,15 +41,15 @@ function dragElement(el) {
 var welcomeScreen = document.querySelector("#welcome");
 var timerScreen = document.querySelector("#timer");
 function closeWindow(el) {
-    // el.classList.remove("active");
+    el.classList.remove("active");
     el.style.display = "none";
 }
 function openWindow(el) {
-    // if (!el.classList.contains("active")) {
-        // el.classList.add("active");
-        // el.style.left = 300 + "px";
-        // el.style.top = 300 + "px";
-    // }
+     if (!el.classList.contains("active")) {
+         el.classList.add("active");
+         el.style.left = 50 + "%";
+         el.style.top = 50 + "%";
+     }
     el.style.display = "block";
     biggestIndex++;
     el.style.zIndex = biggestIndex;
