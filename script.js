@@ -36,13 +36,16 @@ function dragElement(el) {
         document.onmousemove = null;
     }
 }
-
+var biggestIndex = 1;
 // opening and closing welcome window //
 var welcomeScreen = document.querySelector("#welcome");
 var timerScreen = document.querySelector("#timer");
 function closeWindow(el) {
     el.classList.remove("active");
     el.style.display = "none";
+    biggestIndex = biggestIndex - 1;
+    el.style.zIndex = biggestIndex;
+
 }
 function openWindow(el) {
      if (!el.classList.contains("active")) {
@@ -107,7 +110,7 @@ appOpen.addEventListener("click", () =>
 addWindowTapHandling(welcomeScreen);
 addWindowTapHandling(appScreen);
 addWindowTapHandling(timerScreen);
-var biggestIndex = 1;
+
 function initializeIcon(name) {
     var icon = document.querySelector('#' + name + 'Icon');
     var screen = document.querySelector('#' + name);
@@ -125,3 +128,26 @@ function initializeWindow(elName) {
 }
 initializeWindow("welcome");
 initializeWindow("app");
+setInterval(function() {
+    let hourEl = document.getElementById("hourInput");
+let minuteEl = document.getElementById("minuteInput");
+let secondEl = document.getElementById("secondInput");
+const countdown = document.getElementById("countdownP");
+secondEl.setAttribute("max", 59);
+minuteEl.setAttribute("max", 59);
+    if (minuteEl.value >= 60) {
+        minuteEl.value = 59;
+    }
+    if (secondEl.value >= 60) {
+        secondEl.value = 59;
+    }
+}, 1000);
+
+function startTimer() {
+    var hours = document.getElementById("hourInput").value;
+    var minutes = document.getElementById("minuteInput").value;
+    var seconds = document.getElementById("secondInput").value;
+    var hourMilli = hours * 3600000;
+    var minutesMilli = minutes * 60000;
+    var secondsMilli = seconds * 1000;
+}

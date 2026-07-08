@@ -105,3 +105,24 @@ body {
 #desktopApps button:focus {
     border:1px dotted black;
 }
+.timerInput {
+    width:75px;
+    margin:0px 0px;
+    display:flex;
+}
+#timerCont p {
+    text-align:center;
+}
+.timerInput, #timerCont p {
+    display:inline-block;
+}
+#timerCont, #countdownP {
+    text-align: center;
+    margin:auto;
+}
+#timer {
+    width:355px;
+}
+#countdownP {
+    font-size:25px;
+}

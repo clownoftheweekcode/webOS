@@ -46,10 +46,15 @@
                     <span id = "timerhead"><span id = "timerclose"></span><p id = "timerheader">timer</p></span>
                 </div>
                 <div id = "timerCont">
-                    <p>H:</p> <input type = "number" id = "hourInput">
-                    <p>M:</p><input type = "number" id = "minuteInput">
-                    <p>S:</p><input type = "number" id = "secondInput">
-                    <button id = "startTimer">START</button>
+                    <p id = "countdownP">0:00:00</p>
+                    <div id = "timerIput">
+                        <p>H:</p> <input type = "number" id = "hourInput" class = "timerInput">
+                        <p>M:</p><input type = "number" id = "minuteInput" class = "timerInput">
+                        <p>S:</p><input type = "number" id = "secondInput" class = "timerInput">
+                        <br>
+                        <button id = "startTimer" onclick = "startTimer()">START</button>
+                    </div>
+                    
                 </div>
             </div>
         </div>
