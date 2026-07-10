@@ -2,7 +2,10 @@
 setInterval(function() {
     document.querySelector("#timeEl").innerHTML = new Date().toLocaleString();
 }, 1000);
-
+var welcomeMinimize = document.getElementById("welcomeminimize");
+welcomeMinimize.addEventListener("click", function() {
+    minimizeWindow(welcomeScreen);
+});
 // make window draggable //
 dragElement(document.getElementById("welcome"));
 dragElement(document.getElementById("timer"));
@@ -47,6 +50,18 @@ function closeWindow(el) {
     el.style.zIndex = biggestIndex;
 
 }
+var bottomBar = document.getElementById("bottomBar");
+function minimizeWindow(el) {
+    el.classList.add("minimized");
+    el.style.display = "none";
+    if (el === "welcome") {
+        let appOnBar = document.createElement("img");
+        appOnBar.classList.add("appOnBar");
+        appOnBar.backgroundImage = "url('./images/timerIcon.png')";
+        bottomBar.appendChild(appOnBar);
+    }
+}
+
 function openWindow(el) {
      if (!el.classList.contains("active")) {
          el.classList.add("active");

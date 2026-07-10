@@ -14,7 +14,7 @@
 body {
     background-image: url('./images/wallpaper.jpg');
     background-size: cover;
-    height:100vh;
+    /* height:100vh; */
 }
 #topBar {
     display:flex;
@@ -31,7 +31,7 @@ body {
     border-radius:3px;
     margin:6px;
 }
-#welcomeclose, #welcomeheader {
+#welcomeclose, #welcomeheader, #welcomeminimize {
     display:inline-block;
     vertical-align: middle;
 }
@@ -47,8 +47,13 @@ body {
 #appIcon, #timerIcon {
     width: 50px;
     height:50px;
-    background-color: blue;
+    background-color: blue; 
+    background-size: cover;
     margin:auto;
+}
+#timerIcon {
+    background-image: url("./images/timerIcon.png");
+    background-color:transparent;
 }
 .app {
     width:75px;
@@ -125,4 +130,23 @@ body {
 }
 #countdownP {
     font-size:25px;
+}
+.windowApp {
+    resize:both;
+}
+#bottomBar {
+    background-color: blue;
+    width:100%;
+    height:50px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    position:absolute;
+}
+#welcomeminimize {
+    width:13px;
+    height:13px;
+    border-radius: 3px;
+    background-color:yellow;
+    margin-right:5px;
 }
