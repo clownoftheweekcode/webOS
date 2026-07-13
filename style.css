@@ -150,3 +150,17 @@ body {
     background-color:yellow;
     margin-right:5px;
 }
+span #appminimize {
+    width:13px;
+    height:13px;
+    border-radius: 3px;
+    background-color:yellow;
+    margin-right:5px;   
+}
+#timerminimize {
+    width:13px;
+    height:13px;
+    border-radius: 3px;
+    background-color:yellow;
+    margin-right:5px;   
+}
