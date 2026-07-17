@@ -61,12 +61,17 @@ function minimizeWindow(el) {
         bottomBar.appendChild(appOnBar);
     }
 }
-
+let COSTab = document.getElementById("welcomeTab");
+let appTab = document.getElementById("appTab");
+let timerTab = document.getElementById("timerTab");
 function openWindow(el) {
      if (!el.classList.contains("active")) {
          el.classList.add("active");
          el.style.left = 50 + "%";
          el.style.top = 50 + "%";
+         if (el.id === ("windowApp")) {
+            COSTab.style.borderBottom = `2px black solid`;
+         }
      }
     el.style.display = "block";
     biggestIndex++;
