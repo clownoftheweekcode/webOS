@@ -148,26 +148,3 @@ function initializeWindow(elName) {
 }
 initializeWindow("welcome");
 initializeWindow("app");
-setInterval(function() {
-    let hourEl = document.getElementById("hourInput");
-let minuteEl = document.getElementById("minuteInput");
-let secondEl = document.getElementById("secondInput");
-const countdown = document.getElementById("countdownP");
-secondEl.setAttribute("max", 59);
-minuteEl.setAttribute("max", 59);
-    if (minuteEl.value >= 60) {
-        minuteEl.value = 59;
-    }
-    if (secondEl.value >= 60) {
-        secondEl.value = 59;
-    }
-}, 1000);
-
-function startTimer() {
-    var hours = document.getElementById("hourInput").value;
-    var minutes = document.getElementById("minuteInput").value;
-    var seconds = document.getElementById("secondInput").value;
-    var hourMilli = hours * 3600000;
-    var minutesMilli = minutes * 60000;
-    var secondsMilli = seconds * 1000;
-}

@@ -164,3 +164,17 @@ span #appminimize {
     background-color:yellow;
     margin-right:5px;   
 }
+#resetTimer {
+    background-color:rgb(250, 63, 63);
+    border:1px solid rgb(221, 8, 8);
+    border-radius:2px;
+    padding:1px 6px;
+    height:21px;
+}
+#startTimer {
+    background-color:rgb(63, 250, 88);
+    border:1px solid rgb(63, 221, 8);
+    border-radius:2px;
+    padding:1px 6px;
+    height:21px;
+}
