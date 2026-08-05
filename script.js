@@ -8,7 +8,7 @@ welcomeMinimize.addEventListener("click", function() {
 });
 // make window draggable //
 dragElement(document.getElementById("welcome"));
-dragElement(document.getElementById("timer"));
+dragElement(document.getElementById("notes"));
 function dragElement(el) {
     var initialX = 0, initialY = 0, currentX = 0, currentY = 0;
     if (document.getElementById(el.id + "header")) {
@@ -42,7 +42,7 @@ function dragElement(el) {
 var biggestIndex = 1;
 // opening and closing welcome window //
 var welcomeScreen = document.querySelector("#welcome");
-var timerScreen = document.querySelector("#timer");
+var notesScreen = document.querySelector("#notes");
 function closeWindow(el) {
     el.classList.remove("active");
     el.style.display = "none";
@@ -57,13 +57,13 @@ function minimizeWindow(el) {
     if (el === "welcome") {
         let appOnBar = document.createElement("img");
         appOnBar.classList.add("appOnBar");
-        appOnBar.backgroundImage = "url('./images/timerIcon.png')";
+        appOnBar.backgroundImage = "url('./images/notesIcon.png')";
         bottomBar.appendChild(appOnBar);
     }
 }
 let COSTab = document.getElementById("welcomeTab");
 let appTab = document.getElementById("appTab");
-let timerTab = document.getElementById("timerTab");
+let notesTab = document.getElementById("notesTab");
 function openWindow(el) {
      if (!el.classList.contains("active")) {
          el.classList.add("active");
@@ -78,19 +78,19 @@ function openWindow(el) {
     el.style.zIndex = biggestIndex;
 }
 var welcomeScreenClose = document.querySelector("#welcomeclose"), welcomeScreenOpen = document.querySelector("#welcomeopen");
-var timerScreenClose = document.querySelector("#timerclose");
-var timerScreenOpen = document.querySelector("#timeropen");
+var notesScreenClose = document.querySelector("#notesclose");
+var notesScreenOpen = document.querySelector("#notesopen");
 welcomeScreenClose.addEventListener("click", function() {
     closeWindow(welcomeScreen);
 });
 welcomeScreenOpen.addEventListener("click", function() {
      openWindow(welcomeScreen);
 });
-timerScreenOpen.addEventListener("click", () => 
- openWindow(timerScreen));
+notesScreenOpen.addEventListener("click", () => 
+ openWindow(notesScreen));
 
-timerScreenClose.addEventListener("click", () => 
- closeWindow(timerScreen));
+notesScreenClose.addEventListener("click", () => 
+ closeWindow(notesScreen));
 // open app //
 var selectedIcon = undefined;
 function selectIcon(el) {
@@ -129,14 +129,14 @@ appOpen.addEventListener("click", () =>
     openWindow(appScreen));
 addWindowTapHandling(welcomeScreen);
 addWindowTapHandling(appScreen);
-addWindowTapHandling(timerScreen);
+addWindowTapHandling(notesScreen);
 
 function initializeIcon(name) {
     var icon = document.querySelector('#' + name + 'Icon');
     var screen = document.querySelector('#' + name);
     icon.addEventListener("click", () => handleIconTap(icon, screen));
 }
-initializeIcon("timer");
+initializeIcon("notes");
 function initializeWindow(elName) {
     var screen = document.querySelector("#" + elName);
     addWindowTapHandling(screen);
@@ -148,3 +148,4 @@ function initializeWindow(elName) {
 }
 initializeWindow("welcome");
 initializeWindow("app");
+

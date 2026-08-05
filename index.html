@@ -26,9 +26,9 @@
                     </div>
                 </button>
                 <button>
-                    <div class = "app" id = "timeropen">
-                        <p id = "timerIcon"></p>
-                        <p>timer</p>
+                    <div class = "app" id = "notesopen">
+                        <p id = "notesIcon"></p>
+                        <p>notes</p>
                     </div>
                 </button>
             </div>
@@ -41,26 +41,18 @@
                     <p>more text here</p>
                 </div>
             </div>
-            <div class = "windowApp" id = "timer">
-                <div id = "timerTop">
-                    <span id = "timerhead"><span id = "timerclose"></span><span id = "timerminimize"></span><p id = "timerheader">timer</p></span>
+            <div class = "windowApp" id = "notes">
+                <div id = "notesTop">
+                    <span id = "noteshead"><span id = "notesclose"></span><span id = "notesminimize"></span><p id = "notesheader">notes</p></span>
                 </div>
-                <div id = "timerCont">
-                    <p id = "countdownP">0:00:00</p>
-                    <div id = "timerIput">
-                        <p>H:</p> <input type = "number" id = "hourInput" class = "timerInput">
-                        <p>M:</p><input type = "number" id = "minuteInput" class = "timerInput">
-                        <p>S:</p><input type = "number" id = "secondInput" class = "timerInput">
-                        <br>
-                        <button id = "startTimer" onclick = "startTimer()">START</button>
-                    </div>
-                    
+                <div id = "notesCont">
+                    <textarea id = "notesTake"></textarea>
                 </div>
             </div>
             <div id = "bottomBar">
                 <span id = "welcomeTab" class = "bottomIcon"><img src = "./images/clownOSIcon.png"></span>
                 <span id = "appTab" class = "bottomIcon"><img src = "./images/appIcon.png"></span>
-                <span id = "timerTab" class = "bottomIcon"><img src = "./images/timerIcon.png"></span>
+                <span id = "notesTab" class = "bottomIcon"><img src = "./images/notesIcon.png"></span>
             </div>
         </div>
         <script src = "script.js"></script>

@@ -44,15 +44,15 @@ body {
 #winCont {
     padding:6px;
 }
-#appIcon, #timerIcon {
+#appIcon, #notesIcon {
     width: 50px;
     height:50px;
     background-color: blue; 
     background-size: cover;
     margin:auto;
 }
-#timerIcon {
-    background-image: url("./images/timerIcon.png");
+#notesIcon {
+    background-image: url("./images/notesIcon.png");
     background-color:transparent;
 }
 .app {
@@ -67,7 +67,7 @@ body {
 .app:focus {
     background-color:rgba(233, 226, 255, 0.27);
 }
-#appclose, #timerclose  {
+#appclose, #notesclose  {
     background-color: red;
     width:13px;
     height:13px;
@@ -75,20 +75,20 @@ body {
     border-radius:3px;
     margin:6px;
 }
-#appclose, #appheader, #timerclose, #timerheader {
+#appclose, #appheader, #notesclose, #notesheader {
     display:inline-block;
     vertical-align: middle;
 }
-#apphead, #timerhead {
+#apphead, #noteshead {
     margin:0px;
 }
-#appTop, #timerTop {
+#appTop, #notesTop {
     background-color:blue;
 }
-#appCont, #timerCont {
+#appCont, #notesCont {
     padding:6px;
 }
-#app, #timer {
+#app, #notes {
     display:none;
     border:1px solid black;
     border-radius: 5px;
@@ -110,22 +110,22 @@ body {
 #desktopApps button:focus {
     border:1px dotted black;
 }
-.timerInput {
+.notesInput {
     width:75px;
     margin:0px 0px;
     display:flex;
 }
-#timerCont p {
+#notesCont p {
     text-align:center;
 }
-.timerInput, #timerCont p {
+.notesInput, #notesCont p {
     display:inline-block;
 }
-#timerCont, #countdownP {
+#notesCont, #countdownP {
     text-align: center;
     margin:auto;
 }
-#timer {
+#notes {
     width:355px;
 }
 #countdownP {
@@ -157,24 +157,34 @@ span #appminimize {
     background-color:yellow;
     margin-right:5px;   
 }
-#timerminimize {
+#notesminimize {
     width:13px;
     height:13px;
     border-radius: 3px;
     background-color:yellow;
     margin-right:5px;   
 }
-#resetTimer {
+#resetnotes {
     background-color:rgb(250, 63, 63);
     border:1px solid rgb(221, 8, 8);
     border-radius:2px;
     padding:1px 6px;
     height:21px;
 }
-#startTimer {
+#startnotes {
     background-color:rgb(63, 250, 88);
     border:1px solid rgb(63, 221, 8);
     border-radius:2px;
     padding:1px 6px;
     height:21px;
+}
+#notesTake {
+    width: 333px;
+    height:300px;
+    border:none;
+    resize:none;
+    overflow-y:auto;
+}
+#notesTake:focus {
+    outline:none;
 }
