@@ -9,6 +9,7 @@ setInterval(function() {
 // make window draggable //
 dragElement(document.getElementById("welcome"));
 dragElement(document.getElementById("notes"));
+dragElement(document.getElementById("gallery"));
 function dragElement(el) {
     var initialX = 0, initialY = 0, currentX = 0, currentY = 0;
     if (document.getElementById(el.id + "header")) {
@@ -43,6 +44,7 @@ var biggestIndex = 1;
 // opening and closing welcome window //
 var welcomeScreen = document.querySelector("#welcome");
 var notesScreen = document.querySelector("#notes");
+var galleryScreen = document.querySelector("#gallery");
 function closeWindow(el) {
     el.classList.remove("active");
     el.style.display = "none";
@@ -64,6 +66,7 @@ function minimizeWindow(el) {
 let COSTab = document.getElementById("welcomeTab");
 let appTab = document.getElementById("appTab");
 let notesTab = document.getElementById("notesTab");
+let galleryTab = document.getElementById("galleryTab");
 function openWindow(el) {
      if (!el.classList.contains("active")) {
          el.classList.add("active");
@@ -80,6 +83,8 @@ function openWindow(el) {
 var welcomeScreenClose = document.querySelector("#welcomeclose"), welcomeScreenOpen = document.querySelector("#welcomeopen");
 var notesScreenClose = document.querySelector("#notesclose");
 var notesScreenOpen = document.querySelector("#notesopen");
+var galleryScreenClose = document.querySelector("#galleryclose");
+var galleryScreenOpen = document.querySelector("#galleryopen");
 welcomeScreenClose.addEventListener("click", function() {
     closeWindow(welcomeScreen);
 });
@@ -87,10 +92,15 @@ welcomeScreenOpen.addEventListener("click", function() {
      openWindow(welcomeScreen);
 });
 notesScreenOpen.addEventListener("click", () => 
- openWindow(notesScreen));
+    openWindow(notesScreen));
 
 notesScreenClose.addEventListener("click", () => 
- closeWindow(notesScreen));
+    closeWindow(notesScreen));
+galleryScreenOpen.addEventListener("click", () => 
+    openWindow(galleryScreen));
+
+galleryScreenClose.addEventListener("click", () => 
+ closeWindow(galleryScreen));
 // open app //
 var selectedIcon = undefined;
 function selectIcon(el) {
@@ -130,6 +140,7 @@ appOpen.addEventListener("click", () =>
 addWindowTapHandling(welcomeScreen);
 addWindowTapHandling(appScreen);
 addWindowTapHandling(notesScreen);
+addWindowTapHandling(galleryScreen);
 
 function initializeIcon(name) {
     var icon = document.querySelector('#' + name + 'Icon');
@@ -137,6 +148,8 @@ function initializeIcon(name) {
     icon.addEventListener("click", () => handleIconTap(icon, screen));
 }
 initializeIcon("notes");
+// initializeIcon("gallery");
+
 function initializeWindow(elName) {
     var screen = document.querySelector("#" + elName);
     addWindowTapHandling(screen);
@@ -148,4 +161,6 @@ function initializeWindow(elName) {
 }
 initializeWindow("welcome");
 initializeWindow("app");
+initializeWindow("gallery");
+
 

@@ -55,6 +55,10 @@ body {
     background-image: url("./images/notesIcon.png");
     background-color:transparent;
 }
+#galleryIcon {
+    background-image: url("./images/galleryIcon.png");
+    background-color:transparent;
+}
 .app {
     width:75px;
     text-align:center;
@@ -67,7 +71,7 @@ body {
 .app:focus {
     background-color:rgba(233, 226, 255, 0.27);
 }
-#appclose, #notesclose  {
+#appclose, #notesclose,#galleryclose  {
     background-color: red;
     width:13px;
     height:13px;
@@ -75,20 +79,20 @@ body {
     border-radius:3px;
     margin:6px;
 }
-#appclose, #appheader, #notesclose, #notesheader {
+#appclose, #appheader, #notesclose, #notesheader, #galleryclose, #galleryheader {
     display:inline-block;
     vertical-align: middle;
 }
-#apphead, #noteshead {
+#apphead, #noteshead, #galleryhead {
     margin:0px;
 }
-#appTop, #notesTop {
+#appTop, #notesTop, #galleryTop {
     background-color:blue;
 }
-#appCont, #notesCont {
+#appCont, #notesCont,#galleryCont {
     padding:6px;
 }
-#app, #notes {
+#app, #notes,#gallery {
     display:none;
     border:1px solid black;
     border-radius: 5px;
