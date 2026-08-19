@@ -2,10 +2,10 @@
 setInterval(function() {
     document.querySelector("#timeEl").innerHTML = new Date().toLocaleString();
 }, 1000);
-var welcomeMinimize = document.getElementById("welcomeminimize");
-welcomeMinimize.addEventListener("click", function() {
+// var welcomeMinimize = document.getElementById("welcomeminimize");
+/* welcomeMinimize.addEventListener("click", function() {
     minimizeWindow(welcomeScreen);
-});
+}); */
 // make window draggable //
 dragElement(document.getElementById("welcome"));
 dragElement(document.getElementById("notes"));
@@ -50,7 +50,7 @@ function closeWindow(el) {
     el.style.zIndex = biggestIndex;
 
 }
-var bottomBar = document.getElementById("bottomBar");
+/* var bottomBar = document.getElementById("bottomBar");
 function minimizeWindow(el) {
     el.classList.add("minimized");
     el.style.display = "none";
@@ -60,7 +60,7 @@ function minimizeWindow(el) {
         appOnBar.backgroundImage = "url('./images/notesIcon.png')";
         bottomBar.appendChild(appOnBar);
     }
-}
+} */
 let COSTab = document.getElementById("welcomeTab");
 let appTab = document.getElementById("appTab");
 let notesTab = document.getElementById("notesTab");
