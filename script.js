@@ -147,7 +147,8 @@ function initializeIcon(name) {
     var screen = document.querySelector('#' + name);
     icon.addEventListener("click", () => handleIconTap(icon, screen));
 }
-initializeIcon("notes");
+//initializeIcon("notes");
+console.log("notes");
 // initializeIcon("gallery");
 
 function initializeWindow(elName) {

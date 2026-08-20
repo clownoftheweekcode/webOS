@@ -44,7 +44,7 @@ body {
 #winCont {
     padding:6px;
 }
-#appIcon, #notesIcon {
+#appIcon, #notesIcon, #galleryIcon {
     width: 50px;
     height:50px;
     background-color: blue; 
