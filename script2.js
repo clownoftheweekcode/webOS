@@ -1,6 +1,7 @@
 // display time //
 setInterval(function() {
-    document.querySelector("#timeEl").innerHTML = new Date().toLocaleString();
+    const timeEl = document.querySelector("#timeEl");
+    if (timeEl) timeEl.textContent = new Date().toLocaleString();
 }, 1000);
 // var welcomeMinimize = document.getElementById("welcomeminimize");
 /* welcomeMinimize.addEventListener("click", function() {
@@ -11,6 +12,7 @@ dragElement(document.getElementById("welcome"));
 dragElement(document.getElementById("notes"));
 dragElement(document.getElementById("gallery"));
 function dragElement(el) {
+    if (!el) return;
     var initialX = 0, initialY = 0, currentX = 0, currentY = 0;
     if (document.getElementById(el.id + "header")) {
         document.getElementById(el.id + "header").onmousedown = startDragging;
@@ -18,7 +20,6 @@ function dragElement(el) {
         el.onmousedown = startDragging;
     }
     function startDragging(e) {
-    e = e || window.event;
     e.preventDefault();
     initialX = e.clientX;
     initialY = e.clientY;
@@ -26,7 +27,6 @@ function dragElement(el) {
     document.onmousemove = dragElement;
 }
     function dragElement(e) {
-        e = e || window.event;
         e.preventDefault();
         currentX = initialX - e.clientX;
         currentY = initialY - e.clientY;
@@ -49,8 +49,7 @@ function closeWindow(el) {
     if (el) {
         el.classList.remove("active");
         el.style.display = "none";
-        biggestIndex = biggestIndex - 1;
-        el.style.zIndex = biggestIndex;
+        el.style.zIndex = 0;
     }
 }
 /* var bottomBar = document.getElementById("bottomBar");
@@ -69,6 +68,7 @@ let appTab = document.getElementById("appTab");
 let notesTab = document.getElementById("notesTab");
 let galleryTab = document.getElementById("galleryTab");
 function openWindow(el) {
+    if (!el) return;
      if (!el.classList.contains("active")) {
          el.classList.add("active");
          el.style.left = 50 + "%";
@@ -86,22 +86,12 @@ var notesScreenClose = document.querySelector("#notesclose");
 var notesScreenOpen = document.querySelector("#notesopen");
 var galleryScreenClose = document.querySelector("#galleryclose");
 var galleryScreenOpen = document.querySelector("#galleryopen");
-welcomeScreenClose.addEventListener("click", function() {
-    closeWindow(welcomeScreen);
-});
-welcomeScreenOpen.addEventListener("click", function() {
-     openWindow(welcomeScreen);
-});
-notesScreenOpen.addEventListener("click", () => 
-    openWindow(notesScreen));
-
-notesScreenClose.addEventListener("click", () => 
-    closeWindow(notesScreen));
-galleryScreenOpen.addEventListener("click", () => 
-    openWindow(galleryScreen));
-
-galleryScreenClose.addEventListener("click", () => 
- closeWindow(galleryScreen));
+if (welcomeScreenClose) welcomeScreenClose.addEventListener("click", () => closeWindow(welcomeScreen));
+if (welcomeScreenOpen) welcomeScreenOpen.addEventListener("click", () => openWindow(welcomeScreen));
+if (notesScreenOpen) notesScreenOpen.addEventListener("click", () => openWindow(notesScreen));
+if (notesScreenClose) notesScreenClose.addEventListener("click", () => closeWindow(notesScreen));
+if (galleryScreenOpen) galleryScreenOpen.addEventListener("click", () => openWindow(galleryScreen));
+if (galleryScreenClose) galleryScreenClose.addEventListener("click", () => closeWindow(galleryScreen));
 // open app //
 var selectedIcon = undefined;
 function selectIcon(el) {
@@ -133,11 +123,13 @@ appScreenClose.addEventListener("click", () =>
 
 
 function addWindowTapHandling(el) {
-    el.addEventListener("mousedown", () =>
-    handleIconTap(el))
+    if (!el) return;
+    el.addEventListener("mousedown", () => {
+        biggestIndex++;
+        el.style.zIndex = biggestIndex;
+    });
 }
-appOpen.addEventListener("click", () => 
-    openWindow(appScreen));
+if (appOpen) appOpen.addEventListener("click", () => openWindow(appScreen));
 addWindowTapHandling(welcomeScreen);
 addWindowTapHandling(appScreen);
 addWindowTapHandling(notesScreen);
@@ -146,7 +138,7 @@ addWindowTapHandling(galleryScreen);
 function initializeIcon(name) {
     var icon = document.querySelector('#' + name + 'Icon');
     var screen = document.querySelector('#' + name);
-    icon.addEventListener("click", () => handleIconTap(icon, screen));
+    if (icon && screen) icon.addEventListener("click", () => handleIconTap(icon, screen));
 }
 //initializeIcon("notes");
 console.log("notes");
@@ -157,7 +149,7 @@ function initializeWindow(elName) {
     addWindowTapHandling(screen);
     closeWindow(screen);
     dragElement(screen);
-    if (elName != "window") {
+    if (elName !== "window" && screen) {
         initializeIcon(elName);
     }
 }
@@ -174,21 +166,11 @@ let galleryImgEl = document.getElementById("galleryImgEl");
 let prevImgBtn = document.getElementById("prevImg");
 let nextImgBtn = document.getElementById("nextImg");
 let imgIndex = 0;
-prevImgBtn.addEventListener("click", function() {
-    console.log("red")
-    if (imgIndex > galleryImg.length){
-        imgIndex = 0;
-    } else {
-        imgIndex -= 1;
-    }
-    galleryImgEl.src = imgIndex[imgIndex].source;
+if (prevImgBtn && galleryImgEl) prevImgBtn.addEventListener("click", function() {
+    imgIndex = (imgIndex - 1 + galleryImgs.length) % galleryImgs.length;
+    galleryImgEl.src = galleryImgs[imgIndex].source;
 });
-nextImgBtn.addEventListener("click", function() {
-    console.log("blue");
-    if (imgIndex < galleryImg.length){
-        imgIndex = 0;
-    } else {
-        imgIndex += 1;
-    }
-    galleryImgEl.src = imgIndex[imgIndex].source;
+if (nextImgBtn && galleryImgEl) nextImgBtn.addEventListener("click", function() {
+    imgIndex = (imgIndex + 1) % galleryImgs.length;
+    galleryImgEl.src = galleryImgs[imgIndex].source;
 });

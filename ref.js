@@ -46,7 +46,7 @@ var welcomeScreen = document.querySelector("#welcome");
 var notesScreen = document.querySelector("#notes");
 var galleryScreen = document.querySelector("#gallery");
 function closeWindow(el) {
-    if (el) {
+    if (el != undefined) {
         el.classList.remove("active");
         el.style.display = "none";
         biggestIndex = biggestIndex - 1;
@@ -155,7 +155,7 @@ console.log("notes");
 function initializeWindow(elName) {
     var screen = document.querySelector("#" + elName);
     addWindowTapHandling(screen);
-    closeWindow(screen);
+    closeWindow(elName);
     dragElement(screen);
     if (elName != "window") {
         initializeIcon(elName);
@@ -176,7 +176,7 @@ let nextImgBtn = document.getElementById("nextImg");
 let imgIndex = 0;
 prevImgBtn.addEventListener("click", function() {
     console.log("red")
-    if (imgIndex > galleryImg.length){
+    if (imgIndex > galleryImgEl.length){
         imgIndex = 0;
     } else {
         imgIndex -= 1;
@@ -185,7 +185,7 @@ prevImgBtn.addEventListener("click", function() {
 });
 nextImgBtn.addEventListener("click", function() {
     console.log("blue");
-    if (imgIndex < galleryImg.length){
+    if (imgIndex < galleryImgEl.length){
         imgIndex = 0;
     } else {
         imgIndex += 1;
