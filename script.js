@@ -165,3 +165,29 @@ initializeWindow("app");
 initializeWindow("gallery");
 
 
+let galleryImgs = [
+    {"name": "cat", "source": "./images/cat.png"},
+    {"name": "outside", "source": "./images/outside.png"},
+]
+let galleryImgEl = document.getElementById("galleryImgEl");
+let prevImgBtn = document.getElementById("prevImg");
+let nextImgBtn = document.getElementById("nextImg");
+let imgIndex = 0;
+prevImgBtn.addEventListener("click", function() {
+    console.log("red")
+    if (imgIndex > galleryImgEl.length){
+        imgIndex = 0;
+    } else {
+        imgIndex -= 1;
+    }
+    galleryImgEl.src = imgIndex[imgIndex].source;
+});
+nextImgBtn.addEventListener("click", function() {
+    console.log("blue");
+    if (imgIndex < galleryImgEl.length){
+        imgIndex = 0;
+    } else {
+        imgIndex += 1;
+    }
+    galleryImgEl.src = imgIndex[imgIndex].source;
+});
