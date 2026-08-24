@@ -172,8 +172,8 @@ initializeWindow("gallery");
 
 
 let galleryImgs = [
-    {"name": "cat", "source": "./images/cat.png"},
-    {"name": "outside", "source": "./images/outside.png"},
+    {"name": "cat", "path": "./images/cat.png"},
+    {"name": "outside", "path": "./images/outside.png"},
 ]
 let galleryImgEl = document.getElementById("galleryImgEl");
 let prevImgBtn = document.getElementById("prevImg");
@@ -181,19 +181,28 @@ let nextImgBtn = document.getElementById("nextImg");
 let imgIndex = 0;
 prevImgBtn.addEventListener("click", function() {
     console.log("red")
-    if (imgIndex > galleryImg.length){
-        imgIndex = 0;
-    } else {
-        imgIndex -= 1;
+    imgIndex--;
+    if(imgIndex<0){
+        imgIndex=galleryImgs.length - 1;
     }
-    galleryImgEl.src = imgIndex[imgIndex].source;
+    // if (imgIndex > galleryImgs.length){
+    //     imgIndex = 0;
+    // } else {
+    //     imgIndex -= 1;
+    // }
+    console.log(galleryImgs[0]["path"]);
+    galleryImgEl.src = galleryImgs[imgIndex]["path"];
 });
 nextImgBtn.addEventListener("click", function() {
     console.log("blue");
-    if (imgIndex < galleryImg.length){
-        imgIndex = 0;
-    } else {
-        imgIndex += 1;
+    imgIndex++;
+    if(imgIndex>galleryImgs.length-1){
+        imgIndex=0;
     }
-    galleryImgEl.src = imgIndex[imgIndex].source;
+    // if (imgIndex < galleryImgs.length){
+    //     imgIndex = 0;
+    // } else {
+    //     imgIndex += 1;
+    // }
+    galleryImgEl.src = galleryImgs[imgIndex]["path"];
 });
