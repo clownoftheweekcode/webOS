@@ -158,7 +158,12 @@ function initializeWindow(elName) {
     closeWindow(screen);
     dragElement(screen);
     if (elName != "window") {
-        initializeIcon(elName);
+        if (elName === "welcome") {
+
+        } else {
+            initializeIcon(elName);
+        }
+        
     }
 }
 initializeWindow("welcome");
