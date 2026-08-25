@@ -6,6 +6,11 @@ setInterval(function() {
 /* welcomeMinimize.addEventListener("click", function() {
     minimizeWindow(welcomeScreen);
 }); */
+
+let OSIconBtm = document.getElementById("OSIconBtm");
+let updatesIconBtm = document.getElementById("updatesIconBtm");
+let notesIconBtm = document.getElementById("notesIconBtm");
+let galleryIconBtm = document.getElementById("galleryIconBtm");
 // make window draggable //
 dragElement(document.getElementById("welcome"));
 dragElement(document.getElementById("notes"));
@@ -51,6 +56,14 @@ function closeWindow(el) {
         el.style.display = "none";
         biggestIndex = biggestIndex - 1;
         el.style.zIndex = biggestIndex;
+        if (el.id === "app") {
+            bottomAppUnactive(app);
+        } else if (el.id === "notes") {
+            bottomAppUnactive(notes);
+        }
+         else if (el.id === "gallery") {
+            bottomAppUnactive(gallery);
+        }
     }
 }
 /* var bottomBar = document.getElementById("bottomBar");
@@ -76,11 +89,20 @@ function openWindow(el) {
          if (el.id === ("windowApp")) {
             COSTab.style.borderBottom = `2px black solid`;
          }
+         console.log(el);
+         if (el.id === "app") {
+            bottomAppActive(app);
+         } else if (el.id === "notes") {
+            bottomAppActive(notes);
+         } else if (el.id === "gallery") {
+            bottomAppActive(gallery);
+         }
      }
     el.style.display = "block";
     biggestIndex++;
     el.style.zIndex = biggestIndex;
 }
+
 var welcomeScreenClose = document.querySelector("#welcomeclose"), welcomeScreenOpen = document.querySelector("#welcomeopen");
 var notesScreenClose = document.querySelector("#notesclose");
 var notesScreenOpen = document.querySelector("#notesopen");
@@ -206,3 +228,29 @@ nextImgBtn.addEventListener("click", function() {
     // }
     galleryImgEl.src = galleryImgs[imgIndex]["path"];
 });
+
+
+function bottomAppActive(el) {
+    if (el === app) {
+        updatesIconBtm.classList.add("bottomActive");
+        console.log("app");
+    } else if (el === notes) {
+        notesIconBtm.classList.add("bottomActive");
+        console.log("notes");
+    } else if (el === gallery) {
+        galleryIconBtm.classList.add("bottomActive");
+        console.log("gallery");
+    }
+}
+function bottomAppUnactive(el) {
+    if (el === app) {
+        updatesIconBtm.classList.remove("bottomActive");
+        console.log("app");
+    } else if (el === notes) {
+        notesIconBtm.classList.remove("bottomActive");
+        console.log("notes");
+    } else if (el === gallery) {
+        galleryIconBtm.classList.remove("bottomActive");
+        console.log("gallery");
+    }
+}

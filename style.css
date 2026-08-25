@@ -169,6 +169,7 @@ background: linear-gradient(90deg, rgba(240, 248, 255, 0.56) 0%, rgba(181, 219, 
 #bottomBar {
     background-color: blue;
     background: #F0F8FF;
+    /* padding:5px; */
 background: linear-gradient(90deg, rgba(240, 248, 255, .70) 0%, rgba(181, 219, 255, .70) 100%);
     width:100%;
     height:50px;
@@ -176,6 +177,9 @@ background: linear-gradient(90deg, rgba(240, 248, 255, .70) 0%, rgba(181, 219, 2
     left:0px;
     right:0px;
     position:absolute;
+}
+#bottomBar img {
+    border:transparent transparent transparent transparent;
 }
 #welcomeminimize {
     width:13px;
@@ -225,4 +229,11 @@ span #appminimize {
 
 #galleryImgEl {
     width:100px;
+}
+.bottomActive {
+    /* border: blue 2px solid;
+    border-color: transparent transparent blue transparent; */
+    background-color: rgba(0, 146, 255, 0.44);
+    background: #005291;
+background: linear-gradient(0deg, rgba(0, 82, 145, 1) 0%, rgba(0, 82, 145, 1) 15%, rgba(0, 146, 255, 0.44) 15%, rgba(34, 152, 227, 0.44) 100%);
 }
