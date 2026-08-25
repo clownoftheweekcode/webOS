@@ -24,6 +24,7 @@
 body {
     background-image: url('./images/wallpaper.jpg');
     background-size: cover;
+    overflow-x:hidden;
     /* height:100vh; */
 }
 #topBar {
@@ -236,4 +237,9 @@ span #appminimize {
     background-color: rgba(0, 146, 255, 0.44);
     background: #005291;
 background: linear-gradient(0deg, rgba(0, 82, 145, 1) 0%, rgba(0, 82, 145, 1) 15%, rgba(0, 146, 255, 0.44) 15%, rgba(34, 152, 227, 0.44) 100%);
+}
+#galleryImagePath {
+    margin:0px;
+    margin-bottom:5px;
+    text-align:center;
 }

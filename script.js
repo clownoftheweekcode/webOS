@@ -201,6 +201,7 @@ let galleryImgEl = document.getElementById("galleryImgEl");
 let prevImgBtn = document.getElementById("prevImg");
 let nextImgBtn = document.getElementById("nextImg");
 let imgIndex = 0;
+let galleryImagePath = document.getElementById("galleryImagePath");
 prevImgBtn.addEventListener("click", function() {
     console.log("red")
     imgIndex--;
@@ -214,6 +215,7 @@ prevImgBtn.addEventListener("click", function() {
     // }
     console.log(galleryImgs[0]["path"]);
     galleryImgEl.src = galleryImgs[imgIndex]["path"];
+    galleryImagePath.textContent = galleryImgs[imgIndex]["path"];
 });
 nextImgBtn.addEventListener("click", function() {
     console.log("blue");
@@ -227,6 +229,7 @@ nextImgBtn.addEventListener("click", function() {
     //     imgIndex += 1;
     // }
     galleryImgEl.src = galleryImgs[imgIndex]["path"];
+    galleryImagePath.textContent = galleryImgs[imgIndex]["path"];
 });
 
 
