@@ -7,7 +7,10 @@
     background-color:#cf0000;
     color:white;
 }
-
+::root {
+    --barGrad: linear-gradient(90deg, rgba(240, 248, 255, 0.56) 0%, rgba(181, 219, 255, 1) 100%);
+    --barBg: #F0F8FF;
+}
 #welcome {
     border:1px solid black;
     border-radius: 5px;
@@ -34,10 +37,11 @@ background-size: 50px 50px;
 #topBar {
     display:flex;
     justify-content: space-between;
+    
 /* background: #F0F8FF;
 background: linear-gradient(90deg, rgba(240, 248, 255, 1) 0%, rgba(181, 219, 255, 1) 100%); */
-background: #F0F8FF;
-background: linear-gradient(90deg, rgba(240, 248, 255, 0.56) 0%, rgba(181, 219, 255, 1) 100%);
+    background: var(--barBg);
+    background: var(--barGrad);
     padding: 0px 15px;
     border-radius:5px;
 
