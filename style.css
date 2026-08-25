@@ -86,6 +86,7 @@ background: linear-gradient(90deg, rgba(240, 248, 255, 0.56) 0%, rgba(181, 219, 
     background-color:rgba(233, 226, 255, 0.27);
 }
 #appclose, #notesclose,#galleryclose  {
+    cursor:pointer;
     background-color: red;
     width:13px;
     height:13px;
@@ -99,6 +100,9 @@ background: linear-gradient(90deg, rgba(240, 248, 255, 0.56) 0%, rgba(181, 219, 
 }
 #apphead, #noteshead, #galleryhead {
     margin:0px;
+}
+#appheader, #notesheader, #galleryheader {
+    cursor:grab;
 }
 #appTop, #notesTop, #galleryTop {
     background-color:blue;
