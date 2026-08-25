@@ -73,6 +73,10 @@ background: linear-gradient(90deg, rgba(240, 248, 255, 0.56) 0%, rgba(181, 219, 
     background-image: url("./images/galleryIcon.png");
     background-color:transparent;
 }
+#appIcon {
+    background-image: url("./images/updatesIcon.png");
+    background-color: transparent;
+}
 .app {
     width:75px;
     text-align:center;
