@@ -3,7 +3,10 @@
   font-weight: 400;
   font-style: normal;
 }
-
+::selection {
+    background-color:#cf0000;
+    color:white;
+}
 
 #welcome {
     border:1px solid black;
@@ -121,6 +124,12 @@ background: linear-gradient(90deg, rgba(240, 248, 255, 0.56) 0%, rgba(181, 219, 
     background-color:transparent;
     border:none;
     width:fit-content;
+    border:1px dotted transparent;
+}
+#desktopApps button:hover {
+    cursor:pointer;
+    transition: 0.2s ease-in;
+    background-color: rgba(227, 227, 227, 0.44);
 }
 #desktopApps button:focus {
     border:1px dotted black;
@@ -205,9 +214,7 @@ span #appminimize {
 #notesTake:focus {
     outline:none;
 }
-#notesTab img {
-    
-}
+
 #galleryImgEl {
     width:100px;
 }
