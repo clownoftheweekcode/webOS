@@ -24,6 +24,7 @@
     background-color: aliceblue;
     margin:0px;
 }
+
 body {
     /* background-image: url('./images/wallpaper.jpg'); */
     background-color: #E5E5F7;
@@ -40,8 +41,8 @@ background-size: 50px 50px;
     
 /* background: #F0F8FF;
 background: linear-gradient(90deg, rgba(240, 248, 255, 1) 0%, rgba(181, 219, 255, 1) 100%); */
-    background: var(--barBg);
-    background: var(--barGrad);
+    background: #F0F8FF;
+    background: linear-gradient(90deg, rgba(240, 248, 255, .7) 0%, rgba(181, 219, 255, .7) 100%);
     padding: 0px 15px;
     border-radius:5px;
 
@@ -147,6 +148,21 @@ background: linear-gradient(90deg, rgba(240, 248, 255, 1) 0%, rgba(181, 219, 255
     cursor:pointer;
     transition: 0.2s ease-in;
     background-color: rgba(227, 227, 227, 0.44);
+}
+#welcomeopen {
+    margin:0px;
+    vertical-align: middle;
+    padding:16px 0px;
+    width:80px;
+    text-align:center;
+    border-radius: 15px;
+}
+#welcomeopen:hover {
+    
+    cursor:pointer;
+    transition: 0.2s ease-in;
+    background-color: rgba(227, 227, 227, 1);
+    
 }
 #desktopApps button:focus {
     border:1px dotted black;
